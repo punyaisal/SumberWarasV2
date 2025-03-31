@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
                 'nama' => 'Dr. Andi',
                 'alamat' => 'Jl. Medis No.2',
                 'no_hp' => '08129876543',
-                'email' => 'andi@sumberwaras.com',
+                'email' => '    ',
                 'role' => 'dokter',
                 'password' => Hash::make('password123'),
             ],
