@@ -316,6 +316,22 @@ return [
             'text' => 'search',
         ],
         [
+            'text' => 'Dashboard',
+            'url'  => 'pasien/dashboard',
+            'icon' => 'fas fa-fw fa-tachometer-alt',
+        ],
+        [
+            'text' => 'Periksa',
+            'url'  => 'pasien/periksa',
+            'icon' => 'fas fa-fw fa-stethoscope',
+        ],
+        [
+            'text' => 'Riwayat',
+            'url'  => 'pasien/riwayat',
+            'icon' => 'fas fa-fw fa-history',
+        ],
+        
+        [
             'text' => 'blog',
             'url' => 'admin/blog',
             'can' => 'manage-blog',

@@ -1,14 +1,21 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 
 @section('title', 'Riwayat Pemeriksaan')
 
-@section('content_header')
-    <h1>Riwayat Pemeriksaan</h1>
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active">Riwayat</li>
-    </ol>
-@stop
+@section('nav-item')
+    <li class="nav-item">
+        <a href="./periksa" class="nav-link">
+            <i class="nav-icon fas fa-sharp-duotone fa-solid fa-microscope"></i>
+            <p>Periksa</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="./riwayat" class="nav-link">
+            <i class="nav-icon fas fa-solid fa-file-medical"></i>
+            <p>Riwayat</p>
+        </a>
+    </li>
+@endsection
 
 @section('content')
     <div class="card">
@@ -41,8 +48,8 @@
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>C001</td>
-                        <td>Dr. Budi</td>
+                        <td>A001</td>
+                        <td>Dr. John son</td>
                         <td>20-03-2025</td>
                         <td>Demam ringan</td>
                         <td>Paracetamol</td>
@@ -50,8 +57,8 @@
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>C002</td>
-                        <td>Dr. Siti</td>
+                        <td>A002</td>
+                        <td>Dr. John Dan</td>
                         <td>22-03-2025</td>
                         <td>Flu & Batuk</td>
                         <td>Antibiotik</td>
@@ -59,8 +66,8 @@
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td>C003</td>
-                        <td>Dr. Budi</td>
+                        <td>A003</td>
+                        <td>Dr. John Son</td>
                         <td>23-03-2025</td>
                         <td>Hipertensi</td>
                         <td>Amlodipin</td>
@@ -68,8 +75,8 @@
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td>C004</td>
-                        <td>Dr. Joko</td>
+                        <td>A004</td>
+                        <td>Dr. John Dan</td>
                         <td>25-03-2025</td>
                         <td>Gastritis</td>
                         <td>Omeprazole</td>
@@ -77,8 +84,8 @@
                     </tr>
                     <tr>
                         <td>5</td>
-                        <td>C005</td>
-                        <td>Dr. Siti</td>
+                        <td>A005</td>
+                        <td>Dr. John Son</td>
                         <td>27-03-2025</td>
                         <td>Anemia</td>
                         <td>Tablet Zat Besi</td>
