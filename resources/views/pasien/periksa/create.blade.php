@@ -17,7 +17,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Periksa</h1>
+                    <h1 class="m-0">Buat Janji Periksa</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -44,41 +44,62 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form method="POST" action="{{ route('pasien.periksa.store') }}">
+                        <form method="POST" action="/pasien/periksa">
                             @csrf
                             <div class="card-body">
+                                <!-- Pasien Field -->
                                 <div class="form-group">
                                     <label for="id-pasien">Pasien</label>
-                                    <select class="form-control" id="id-pasien" name="id_pasien">
-                                        <option selected>Karena Pasiennya tidak Login, jadi Pilih Pasiennya manual dulu</option>
-                                        @foreach($pasiens as $pasien)
-                                            <option value="{{ $pasien->id }}">{{ $pasien->nama }}</option>
-                                        @endforeach
-                                    </select>
+                                    @if(auth()->check() && auth()->user()->role == 'pasien')
+                                        <input type="hidden" name="id_pasien" value="{{ auth()->id() }}">
+                                        <input type="text" class="form-control" value="{{ auth()->user()->name }}" disabled>
+                                    @else
+                                        <select class="form-control" id="id-pasien" name="id_pasien">
+                                            <option value="">Pilih Pasien</option>
+                                            @foreach($pasiens as $pasien)
+                                                <option value="{{ $pasien->id }}">{{ $pasien->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    @endif
                                 </div>
+
+                                <!-- Dokter Field -->
                                 <div class="form-group">
                                     <label for="id-dokter">Dokter</label>
                                     <select class="form-control" id="id-dokter" name="id_dokter">
-                                        <option selected>Pilih Dokter</option>
+                                        <option value="">Pilih Dokter</option>
                                         @foreach($dokters as $dokter)
-                                            <option value="{{ $dokter->id }}">{{ $dokter->nama }}</option>
+                                            <option value="{{ $dokter->id }}">{{ $dokter->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
+
+                                <!-- Tanggal Pemeriksaan Field -->
+                                <div class="form-group">
+                                    <label for="tgl-periksa">Tanggal Periksa</label>
+                                    <input type="datetime-local" class="form-control" id="tgl-periksa" name="tgl_periksa" value="">
+                                </div>
+
+                                <!-- Catatan Field -->
+                                <div class="form-group">
+                                    <label for="catatan">Catatan</label>
+                                    <textarea class="form-control" id="catatan" name="catatan" rows="3"></textarea>
+                                </div>
+
+                               
+
+                                
                             </div>
-                        
+
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary float-right">Simpan</button>
                             </div>
                         </form>
-                        
-                        
                     </div>
                     <!-- /.card -->
                 </div>
             </div>
             <!-- /.row -->
-
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

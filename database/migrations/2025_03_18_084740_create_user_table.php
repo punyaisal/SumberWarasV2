@@ -1,5 +1,5 @@
 <?php
-
+// migrations/2025_03_18_084740_create_user_table.php
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('user', function (Blueprint $table) {
             $table->id();
-            $table->string('nama', 255);
+            $table->string('name', 255);
             $table->string('alamat', 255);
             $table->string('no_hp', 50);
             $table->string('email', 50)->unique();

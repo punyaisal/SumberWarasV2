@@ -1,5 +1,5 @@
 <?php
-
+// 2025_03_29_062559_create_sessions_table.php
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

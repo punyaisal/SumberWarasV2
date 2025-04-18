@@ -1,5 +1,5 @@
 <?php
-
+// seeders/UserSeeder.php
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -12,7 +12,7 @@ class UserSeeder extends Seeder
     {
         DB::table('user')->insert([
             [
-                'nama' => 'Admin Sumber Waras',
+                'name' => 'Admin Sumber Waras',
                 'alamat' => 'Jl. Kesehatan No.1',
                 'no_hp' => '08123456789',
                 'email' => 'admin@sumberwaras.com',
@@ -20,15 +20,15 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('password123'),
             ],
             [
-                'nama' => 'Dr. Andi',
+                'name' => 'Dr. Andi',
                 'alamat' => 'Jl. Medis No.2',
                 'no_hp' => '08129876543',
-                'email' => '    ',
+                'email' => 'andi@sumberwaras.com',
                 'role' => 'dokter',
                 'password' => Hash::make('password123'),
             ],
             [
-                'nama' => 'Budi Pasien',
+                'name' => 'Budi Pasien',
                 'alamat' => 'Jl. Sehat No.3',
                 'no_hp' => '081212341234',
                 'email' => 'budi@sumberwaras.com',

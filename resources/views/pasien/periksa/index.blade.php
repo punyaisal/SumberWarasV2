@@ -75,7 +75,7 @@
                                         @foreach($periksas as $periksa)
                                             <tr>
                                                 <td>{{ $loop->iteration ?? 'N/A' }}</td>
-                                                <td>{{ $periksa->dokter->nama ?? 'N/A' }}</td>
+                                                <td>{{ $periksa->dokter->name ?? 'N/A' }}</td>
                                                 <td>{{ $periksa->tgl_periksa ?? 'N/A' }}</td>
                                                 <td>{{$periksa->biaya_periksa ? 'Rp ' . number_format($periksa->biaya_periksa, 0, ',', '.') : 'N/A'}}</td>
                                                 <td>

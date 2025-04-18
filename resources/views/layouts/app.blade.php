@@ -142,10 +142,13 @@
                         @yield('nav-item')
 
                         <li class="nav-item">
-                            <a href="./logout" class="nav-link">
-                                <i class="nav-icon fas fa-sharp fa-solid fa-door-open"></i>
-                                <p>Logout</p>
-                            </a>
+                            <form action="{{ route('logout') }}" method="POST" id="logout-form">
+                                @csrf
+                                <a href="javascript:void(0)" class="nav-link" onclick="document.getElementById('logout-form').submit();">
+                                    <i class="nav-icon fas fa-sharp fa-solid fa-door-open"></i>
+                                    <p>Logout</p>
+                                </a>
+                            </form>
                         </li>
                     </ul>
                 </nav>
